@@ -60,11 +60,11 @@ We could do all of our coding in VS Code again, there are lots of plugins etc th
 
 ### Install IntelliJ Community Edition
 
-Go to the IntelliJ section on the Jetbrains website [here](https://www.jetbrains.com/idea/download/), make sure the correct Operating System is chosen and then download the Community Edition of the IDE. For Windows and Mac this downloads an installer that you run to install the application.
+Go to the IntelliJ section on the Jetbrains website [here](https://www.jetbrains.com/idea/download/), make sure the correct Operating System is chosen and then download the **Community Edition** of the IDE. For Windows and Mac this downloads an installer that you run to install the application. Note: For now select the Community Edition so that you don't have to worry about licenses etc, and we are all using the same edition of the IDE. If you have an academic email address (ie for a University) you may be able to get 12 month free license for the Ultimate Edition, or if you are going to work for a company they may provide you with a license.
 
-Launch the application once it has been installed. The latest version has a new GUI which is in Beta, you can switch this off (if you turned it on) by opening the Settings dialogue from the File menu, finding the **New UI** option under **Apearances & Behavior** and unticking the box next to **Enable new UI**. The UI is a little flaky so avoiding it until you are used to the way IntelliJ works is the easiest option for now.
+Launch the application once it has been installed. The latest version has a new GUI which is in Beta, you can switch this off or on by opening the Settings dialogue from the File menu, finding the **New UI** option under **Appearances & Behavior** and unticking the box next to **Enable new UI**. At least initially I am going to use the UI but if it proves too flaky for general use I may switch back to the old one.
 
-Initially for most of the activities you will be cloning an existing project and using that so all of the Java setup will already be in place, but to ensure that everything is working as we want we're going to setup a new project in IntelliJ with the required settings. When you first run IntelliJ you will see something that looks similar to this:
+Initially for most of the activities you will be cloning an existing project and using that so all of the Java setup will already be in place, but to ensure that everything is working as we want we're going to set up a new project in IntelliJ with the required settings. When you first run IntelliJ you will see something that looks similar to this:
 
 ![IntelliJ First Run](assets/first_run.png)
 
@@ -80,9 +80,9 @@ The Location shows the folder which your new project's folder will be created in
 
 Leave the `Create Git repository` option ticked, make sure the language is set to `Java`, and choose `Gradle` for the Build system.
 
-Where it says `JDK` clicking on the drop down will show all of the Java installations that IntelliJ has detected on your machine, make sure this is set to the version of Java which you downloaded earlier (in this case 18.0.2 but your version number may be slightly different).
+Where it says `JDK` clicking on the drop-down will show all of the Java installations that IntelliJ has detected on your machine, make sure this is set to the version of Java which you downloaded earlier (in this case 18.0.2 but your version number may be slightly different).
 
-Choose `Kotlin` for the `Gradle DSL` and choose to leave the `Add sample code` box ticked for now.
+Choose `Groovy` for the `Gradle DSL` and choose to leave the `Add sample code` box ticked for now.
 
 Click on the arrow to open the `Advanced Settings` section, and for the GroupID option change it to read `com.booleanuk` which should give you something like the following settings:
 
@@ -96,25 +96,25 @@ The code that results (from the sample code option) is very similar to the code 
 
 The green in the file names is to do with Git and whether they're new files that have no yet been staged at all. Files that we have previously added but have now updated will show in blue. Once they've been staged and committed the filename will turn white (or whatever default colour you have set up).
 
-The very faint `+` to the right of the green triangle on line 4 is to indicate that the existing code has actually been folded to make it more readable/confuse new developers, clicking on it will expand the class/method to show all of the code.
+The very faint `>` to the right of the green triangle (with the old UI it is a `+`) on line 4 is to indicate that the existing code has actually been folded to make it more readable/confuse new developers, clicking on it will expand the class/method to show all of the code.
 
 ![Sample Class Expanded](assets/sample-code-expanded.png)
 
-The green triangle shows potential entry points for runnign the code that has been created. If you click on either of the ones on lines 3 or 4 it will run the code, you can also run it by clicking on the green triangle at the top of the window to the right of where it says `Current File`. This option will run the selection that is currently being shown in the drop down menu, so if a different option is showing it won't necessarily run what you are looking at. If you right click in the main code window there will also normally be an option to run the code from there too.
+The green triangle shows potential entry points for running the code that has been created. If you click on either of the ones on lines 3 or 4 it will run the code, you can also run it by clicking on the green triangle at the top of the window to the right of where it says `Current File`. This option will run the selection that is currently being shown in the drop-down menu, so if a different option is showing it won't necessarily run what you are looking at. If you right-click in the main code window there will also normally be an option to run the code from there too.
 
-We can run the code we have as the class (more on this later) contains a special method (and this will also be discussed later) called main that serves as an `entry point` into our program. The `main()` method along with `System.out.println()` are the easiest way for you to be able to see what is happening in your code (they are Java's equivalent to `console.log()` in JavaScript to some extent). When we run tests on our code later on it won't normally be testing the `main()` method but you can use it as a way to check what is happening for yourself.
+We can run the code we have as the class (more on this later) contains a special method (and this will also be discussed later) called `main` that serves as an `entry point` into our program. The `main()` method along with `System.out.println()` are the easiest way for you to be able to see what is happening in your code (they are Java's equivalent to `console.log()` in JavaScript to some extent). When we run tests on our code later on it won't normally be testing the `main()` method, but you can use it as a way to check what is happening for yourself.
 
-Run the file using one fo the methods discussed and you should see a `Run` window open at the bottom of the screen which eventually (after Java finishes compiling the file) will have the output of the program running. Change the message to be output and rerun the code (the compilation should take less time) and then see the output (if you see the old message again you probably forgot to save the file).
+Run the file using one fo the methods discussed, and you should see a `Run` window open at the bottom of the screen which eventually (after Java finishes compiling the file) will have the output of the program running. Change the message to be output and rerun the code (the compilation should take less time) and then see the output (if you see the old message again you probably forgot to save the file).
 
 ## Primitive Data Types
 
-Unlike languages like JavaScript which use something called **Duck Typing** Java insists that you decide what data type a particular variable or object is when you declare it and makes sure that value or object that will be assigned to it matches this data type (Object Oriented Programming offers a way to sort of circumvent this), whilst this can feel a little restrictive to begin with it does help avoid runtime bugs and other problems which can be tricky to find.
+Unlike languages like JavaScript which use something called **Duck Typing** Java insists that you decide what data type a particular variable or object is when you declare it and makes sure that value or object that will be assigned to it matches this data type (Object-Oriented Programming offers a way to sort of circumvent this), whilst this can feel a little restrictive to begin with it does help avoid runtime bugs and other problems which can be tricky to find.
 
 If we want to declare a variable called score that is going to hold an integer (whole number) then we can do the declaration on one line without assigning a value to it.
 
 `int score;`
 
-The line of code **must** end with a semi-colon `;` which is what tells Java the code on that line is complete.
+The line of code **must** end with a semicolon `;` which is what tells Java the code on that line is complete.
 
 Add the above line to our hello world program above and then add another line that says `System.out.println(score);` below it so that the code looks like this:
 
@@ -142,30 +142,30 @@ You can assign a value to `score` either on the same line it is declared on so t
 
 `int` is one of the primitive data types that comes with Java out of the box. Primitive data types are common ones that we will use repeatedly (and that you have used in Javascript possibly without knowing it). The others are shown below:
 
-| Data Type | Examples                              | Purpose                                                                                      |
-|-----------|---------------------------------------|----------------------------------------------------------------------------------------------|
-| boolean   | `true`, `false`                       | Answer yes or no questions                                                                   |
-| byte      | `-128`, `0`, `20`, `127`              | Store whole numbers from -128 to 127                                                         |
-| short     | `-32768`, `0`, `20`, `32767`          | Store whole numbers from -32768 to 32767                                                     |
-| int       | `-2000000000`, `0`, `20`, `2000000000`| Store whole numbers from -2147483648 to 2147483647                                           |
-| long      | `-2L`, `0L`, `20L`, `2L`              | Store whole numbers from -9223372036854775808 to 9223372036854775808                         |
-| float     | `-5.91f`, `0.29f`, `2.19f`, `5.67f`   | Store fractional numbers from 3.4e−038 to 3.4e+038                                           |
-| double    | `-19.99d`, `0.29d`, `2.19d`, `5.67d`  | Store fractional numbers from 1.7e−308 to 1.7e+308. They have double the precision of floats |
-| char      | `'A', 'B', 'C'`                       | Store a single character (notice chars us a single quote mark)                               |
+| Data Type | Examples                               | Purpose                                                                                      |
+|-----------|----------------------------------------|----------------------------------------------------------------------------------------------|
+| boolean   | `true`, `false`                        | Answer yes or no questions                                                                   |
+| byte      | `-128`, `0`, `20`, `127`               | Store whole numbers from -128 to 127                                                         |
+| short     | `-32768`, `0`, `20`, `32767`           | Store whole numbers from -32768 to 32767                                                     |
+| int       | `-2000000000`, `0`, `20`, `2000000000` | Store whole numbers from -2147483648 to 2147483647                                           |
+| long      | `-2L`, `0L`, `20L`, `2L`               | Store whole numbers from -9223372036854775808 to 9223372036854775808                         |
+| float     | `-5.91f`, `0.29f`, `2.19f`, `5.67f`    | Store fractional numbers from 3.4e−038 to 3.4e+038                                           |
+| double    | `-19.99d`, `0.29d`, `2.19d`, `5.67d`   | Store fractional numbers from 1.7e−308 to 1.7e+308. They have double the precision of floats |
+| char      | `'A', 'B', 'C'`                        | Store a single character (notice chars us a single quote mark)                               |
 
 We can declare and initialise (assign a value to) them in the same way we did with `score` above.
 
 Add a variable declaration for each to the code you already have and also a `System.out.println()` statement to show each one.
 
-The one variable type we don't have here is the String (collection of text), in Java a String is a different type of variable called a **Reference Type** currently we don't need to worry about the difference, but be aware that each of the Primitive Types shown above also have a **Reference Type** version that we will also need to use in specific circumstances. For instance the **Reference Type** version of an `int` is an `Integer` and we may need to use that. **Reference Types** tend to have names which begin with a capital letter and when we get on to defining our own classes we will essentially be defining our own **Reference Types**. Converting between the two types (Primitive and Reference Types) is called autoboxing or unboxing depending on which way the conversion goes and is something that the Java compiler does for you.
+The one variable type we don't have here is the String (a collection of text), in Java a String is a different type of variable called a **Reference Type** currently we don't need to worry about the difference, but be aware that each of the Primitive Types shown above also have a **Reference Type** version that we will also need to use in specific circumstances. For instance the **Reference Type** version of an `int` is an `Integer` and we may need to use that in certain circumstances. **Reference Types** tend to have names which begin with a capital letter and when we get on to defining our own classes we will essentially be defining our own **Reference Types**. Converting between the two types (Primitive and Reference Types) is called autoboxing or unboxing depending on which way the conversion goes and is something that the Java compiler does for you.
 
-Add a line to declare and intialise a new `String` variable called name, with your name assigned to it and then on a separate line add in the following code:
+Add a line to declare and initialise a new `String` variable called name, with your name assigned to it and then on a separate line add in the following code:
 
 ```
 System.out.println("Hello " + name + " how are you?");
 ```
 
-Note that where chars have a single quote mark around them `'`, Strings have to have double quote marks around them `"`.
+Note that where `char`s have a single quote mark around them `'`, `String`s have to have double quote marks around them `"`.
 
 Strings also have lots of useful methods we can call on them such as `name.length()` or `name.toUpperCase()` here are some useful reference guides:
 
@@ -174,7 +174,7 @@ Strings also have lots of useful methods we can call on them such as `name.lengt
 
 ## Classes and Members
 
-Everything in Java lives inside classes, we'll discuss defining our own objects lateer but for now if you think of a class as having state and behaviour, then we can think of the state as being the data that is stored inside instances of the class and behaviour as being the methods (functions) we will define as being part of the class (this will all become clearer later). At the moment we can create a class to use such as an `Album` as follows. Right click on the folder that the `Main` class file is contained in (probably called `booleanuk`) and select `New` then `Java Class`. Give it the name Album and IntelliJ will create the stub of the class as follows.
+Everything in Java lives inside classes, we'll discuss defining our own objects later but for now if you think of a class as having state and behaviour, then we can think of the state as being the data that is stored inside instances of the class and behaviour as being the methods (functions) we will define as being part of the class (this will all become clearer later). At the moment we can create a class to use such as an `Album` as follows. Right-click on the folder that the `Main` class file is contained in (probably called `booleanuk`) and select `New` then `Java Class`. Give it the name Album and IntelliJ will create the stub of the class as follows.
 
 ![New Class](assets/new-class.png)
 
@@ -204,7 +204,7 @@ public class Album {
 }
 ```
 
-At the moment you can't run the code for this file as there is no entry point. To add one we need to add a `main()` method similar to the one we had previously. Inside that method we need to create a new instance of the Album class and then we will be able to access the values stored in its variables.
+At the moment you can't run the code for this file as there is no entry point. To add one we need to add a `main()` method similar to the one we had previously. Inside that method we need to create a new instance of the Album class, and then we will be able to access the values stored in its variables.
 
 ```java
 package com.booleanuk;
@@ -256,7 +256,7 @@ This creates a new instance of the `Album` class and then outputs some of the in
 
 ## Running Tests
 
-Many of the early tasks you will be doing will have tests predefined by us, that you will need to make pass in order to pass the Core criteria and then other tests that will test the Extension criteria. Lets add some tests to this project to show you how it will work. Go to the Project browser and make sure the `test` folder is expanded. Then right click on the **Java** option below `test`
+Many of the early tasks you will be doing will have tests predefined by us, that you will need to make pass in order to pass the Core criteria and then other tests that will test the Extension criteria. Let's add some tests to this project to show you how it will work. Go to the Project browser and make sure the `test` folder is expanded. Then right-click on the **Java** option below `test`
 
 ![Choose Java](assets/find-test.png)
 
