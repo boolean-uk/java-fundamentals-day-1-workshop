@@ -12,19 +12,21 @@
 
 ## Installation
 
-### Install Java 18 SDK
+### Install Java 17 SDK
 
-There are Platform specific installation instructions [here](https://docs.oracle.com/en/java/javase/18/install/overview-jdk-installation.html).
+Go to [here](https://learn.microsoft.com/en-us/java/openjdk/download#openjdk-17) and download the appropriate version of the Java SDK for your machine (we are specifically targetting versiion 17 of the JDK). If you use other versions of the JDK you may encounter problems so it is recommended that you just use version 17 for your platform.
+
+There are Platform specific installation instructions [here](https://learn.microsoft.com/en-us/java/openjdk/install).
 
 To test which version your system can see, start a new Git Bash/Terminal and run `java --version` the output should look something like this:
 
 ```bash
-java 18.0.2.1 2022-08-18
-Java(TM) SE Runtime Environment (build 18.0.2.1+1-1)
-Java HotSpot(TM) 64-Bit Server VM (build 18.0.2.1+1-1, mixed mode, sharing)
+openjdk 17.0.9 2023-10-17 LTS
+OpenJDK Runtime Environment Microsoft-8526870 (build 17.0.9-LTS)
+OpenJDK 64-Bit Server VM Microsoft-8526870 (build 17.0.9-LTS, mixed mode, sharing)
 ```
 
-The final numbers aren't important, as long as you're seeing `java 18` at the beginning.
+The final numbers aren't important, as long as you're seeing `openjdk 17` at the beginning.
 
 In theory that's enough to begin developing java programs.
 
