@@ -1,14 +1,11 @@
-# Java Build Tools, Primitive Data Types, Classes and Members
+# Java Build Tools
 
 ## Learning Objectives
 
 - Use IntelliJ as an IDE
 - Build and compile a simple Java app without gradle
 - Build and compile a simple Java app with gradle
-- Explain what primitive data types are
-- Build a simple Java program using primitive data types
 - Build a simple Java program using strings
-- Declare class members and assign them primitive values
 
 ## Installation
 
